@@ -5,7 +5,8 @@ using namespace std;
 
 class Sudoku 
 {
-	int s[9][9],u[9][9],d[9][9];
+	int j,i,l,k,w,x,y,z;
+	int s[9][9],u[9][9],d[9][9];;
 	public:
     	void giveQuestion();
     	void readIn();
@@ -16,11 +17,13 @@ class Sudoku
     	void rotate(int);
     	void flip(int);
     	void transform();
-    	bool notCorrect();
-    	void onePossible();
-    	int countZero();
-    	void begin();
-    	bool possible[9][9]; 
-    	void out();
+        int check(int,int,int);
+    	int check2(int , int , int );
+    	int check3(int, int, int);
+    	int get(int , int );
+    	int get2(int, int);
+    	int get3(int, int);
+    	
+    
     	
 };
