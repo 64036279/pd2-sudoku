@@ -218,56 +218,6 @@ void Sudoku::transform()
 		cout<<"\n";
 	}
 }
-int Sudoku::check(int a, int b, int c)
-{
-    int rowStart=(a/3)*3;
-    int colStart=(b/3)*3;//初始值設定 
-    
-    for(j=0;j<9;j++)
-    {
-        if (s[a][j]==c)
-	   		 return 0;
-        if (s[j][b]==c)
-			 return 0;
-        if (s[rowStart+(j%3)][colStart+(j/3)]==c)
-		     return 0;
-    }
-    return 1;
-}
-
-int Sudoku::check2(int a,int b,int c)
-{
-    int rowStart=(a/3)*3;
-    int colStart=(b/3)*3;
-    
-    for( j= 8;j>=0;j--)
-    {
-        if (d[a][j]==c)
-			return 0;
-        if (d[j][b]==c)
-			return 0;
-        if (d[rowStart+(j%3)][colStart+(j/3)]==c)
-			return 0;
-    }
-    return 1;
-}
-int Sudoku::check3(int a,int b,int c)
-{
-    int rowStart=(a/3)*3;
-    int colStart=(b/3)*3;
-    
-    for( j=0;j<9;j++)
-    {
-        if (d[a][j]==c)
-			return 0;
-        if (d[j][b]==c)
-			return 0;
-        if (d[rowStart + (j%3)][colStart + (j/3)]==c)
-			return 0;
-    }
-    return 1;
-}
-
 int Sudoku::get(int a,int b)
 {
 	int i;
@@ -409,6 +359,57 @@ int Sudoku::get3(int a,int b)
 
 
 
+int Sudoku::check(int a, int b, int c)
+{
+    int rowStart=(a/3)*3;
+    int colStart=(b/3)*3;//初始值設定 
+    
+    for(j=0;j<9;j++)
+    {
+        if (s[a][j]==c)
+	   		 return 0;
+        if (s[j][b]==c)
+			 return 0;
+        if (s[rowStart+(j%3)][colStart+(j/3)]==c)
+		     return 0;
+    }
+    return 1;
+}
+
+int Sudoku::check2(int a,int b,int c)
+{
+    int rowStart=(a/3)*3;
+    int colStart=(b/3)*3;
+    
+    for( j= 8;j>=0;j--)
+    {
+        if (d[a][j]==c)
+			return 0;
+        if (d[j][b]==c)
+			return 0;
+        if (d[rowStart+(j%3)][colStart+(j/3)]==c)
+			return 0;
+    }
+    return 1;
+}
+int Sudoku::check3(int a,int b,int c)
+{
+    int rowStart=(a/3)*3;
+    int colStart=(b/3)*3;
+    
+    for( j=0;j<9;j++)
+    {
+        if (d[a][j]==c)
+			return 0;
+        if (d[j][b]==c)
+			return 0;
+        if (d[rowStart + (j%3)][colStart + (j/3)]==c)
+			return 0;
+    }
+    return 1;
+}
+
+
 void Sudoku::solve()
 {
 	for(i=0;i<9;++i)
@@ -472,4 +473,3 @@ int main()
 	return 0;
 
 	}	
-
