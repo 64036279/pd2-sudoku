@@ -88,6 +88,58 @@ void Sudoku::changeNum(int a , int b)
 		}
 	}
 }
+void Sudoku::solve()
+{
+	for(i=0;i<9;++i)
+	{
+		for(j=0;j<9;++j)
+		{
+			d[i][j]=s[i][j];
+		}
+	}
+	if(w==1) 
+	{
+		cout<<"0"<<"\n";
+		return;
+    }
+	x=get(0,0);
+	y=get3(0,0); 
+
+	if(x==1)
+	{
+		z=0;
+		for( i=0;i<9;++i)
+		{
+			for(int u=0;u<9;++u)
+			{
+				if(s[i][u]!=d[i][u])
+					z=1;
+			}
+		}
+
+		if(z==1) 
+			cout<<"2"<<"\n";
+		else
+		{
+			cout<<"1"<<"\n";
+			for(i=0;i<9;i++)
+			{	
+				for(j=0;j<9;j++)
+				{
+					cout<<s[i][j]<<" ";
+				}
+				cout<<"\n";
+			}
+		}
+			
+	}
+	
+	else
+	{
+		cout<<"0"<<"\n";
+	}
+}
+
 
 
 	void Sudoku::changeRow(int a , int b)
@@ -405,58 +457,6 @@ int Sudoku::check3(int a,int b,int c)
     return 1;
 }
 
-
-void Sudoku::solve()
-{
-	for(i=0;i<9;++i)
-	{
-		for(j=0;j<9;++j)
-		{
-			d[i][j]=s[i][j];
-		}
-	}
-	if(w==1) 
-	{
-		cout<<"0"<<"\n";
-		return;
-    }
-	x=get(0,0);
-	y=get3(0,0); 
-
-	if(x==1)
-	{
-		z=0;
-		for( i=0;i<9;++i)
-		{
-			for(int u=0;u<9;++u)
-			{
-				if(s[i][u]!=d[i][u])
-					z=1;
-			}
-		}
-
-		if(z==1) 
-			cout<<"2"<<"\n";
-		else
-		{
-			cout<<"1"<<"\n";
-			for(i=0;i<9;i++)
-			{	
-				for(j=0;j<9;j++)
-				{
-					cout<<s[i][j]<<" ";
-				}
-				cout<<"\n";
-			}
-		}
-			
-	}
-	
-	else
-	{
-		cout<<"0"<<"\n";
-	}
-}
 
 
 
