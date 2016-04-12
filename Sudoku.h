@@ -18,11 +18,11 @@ class Sudoku
     	void flip(int);
     	void transform();
         int check(int,int,int);
-    	int check2(int , int , int );
-    	int check3(int, int, int);
-    	int get(int , int );
-    	int get2(int, int);
-    	int get3(int, int);
+    	int check2(int,int,int );
+    	int check3(int,int,int);
+    	int get(int,int);
+    	int get2(int,int);
+    	int get3(int,int);
     	
     
     	
